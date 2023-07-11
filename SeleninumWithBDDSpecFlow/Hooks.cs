@@ -106,7 +106,7 @@ namespace SeleninumWithBDDSpecFlow
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContext.TestError.Message, captureScreenshot);
             }
 
-            //Pending Status          
+            //Pending for implementation          
             if (TestResult.ToString() == "StepDefinitionPending")
             {
                 if (stepType == "Given")
