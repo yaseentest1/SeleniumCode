@@ -29,7 +29,7 @@ namespace SeleninumWithBDDSpecFlow
 
         //private RemoteWebDriver _driver;
         private IWebDriver _driver;
-        
+
         public Hooks(IObjectContainer objectContainer)
         {
             _objectContainer = objectContainer;
@@ -106,7 +106,7 @@ namespace SeleninumWithBDDSpecFlow
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContext.TestError.Message, captureScreenshot);
             }
 
-            //Pending Status          
+            //Pending for implementation          
             if (TestResult.ToString() == "StepDefinitionPending")
             {
                 if (stepType == "Given")
@@ -142,7 +142,7 @@ namespace SeleninumWithBDDSpecFlow
             {
                 case BrowserType.Chrome:
                     ChromeOptions option = new ChromeOptions();
-                    //option.AddArgument("--headless");
+                    option.AddArgument("--headless");
                     _driver = new ChromeDriver(option);
                     _objectContainer.RegisterInstanceAs<IWebDriver>(_driver);
                     break;
