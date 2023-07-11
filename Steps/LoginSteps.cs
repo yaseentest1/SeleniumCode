@@ -60,7 +60,7 @@ namespace SeleninumWithBDDSpecFlow.Steps
 
             var element = _driver.FindElement(By.XPath("/html/body/section/header/div/div[1]/div[2]/div[1]/button"));
 
-            //Assert.That(element.Text, Is.Null, "Header text not found !!!");
+            Assert.That(element.Text, Is.Null, "Header text not found !!!");
 
             //An way to assert multiple properties of single test
             /*  Assert.Multiple(() =>
@@ -74,7 +74,7 @@ namespace SeleninumWithBDDSpecFlow.Steps
         [Then(@"I logout from application")]
         public void ThenILogoutFromApplication()
         {
-            //ScenarioContext.Current.Pending();
+            ScenarioContext.Current.Pending();
         }
 
     }
